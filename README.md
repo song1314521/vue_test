@@ -1,16 +1,16 @@
 # vue_test
 
-## Project setup
+## 第一步装包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 运行命令
 ```
 npm run dev
 ```
 
-### Compiles and minifies for production
+### 打包命令
 ```
 npm run build
 ```
