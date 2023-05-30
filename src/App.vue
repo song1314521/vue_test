@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- 环形进度条 -->
+    <circularProgressBar :value="value" />
+    <div class="slider">
+      <el-slider
+        v-model="value"
+        @change="changeSlider"
+      ></el-slider>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import circularProgressBar from "@/components/circularProgressBar.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    circularProgressBar,
+  },
+  data() {
+    return {
+      value: 75,
+    };
+  },
+  methods: {
+    changeSlider(val) {
+      this.value = val;
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+p {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.slider {
+  width: 25%;
+  margin: 0 auto;
 }
 </style>
